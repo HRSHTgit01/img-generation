@@ -9,11 +9,7 @@ import dalleRoutes from './routes/dalleRoutes.js';
 dotenv.config();
 
 const app = express();
-app.use(cors({
-  origin: 'http://localhost:5173', // Allow your frontend domain
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type'
-}));
+app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 
 app.use('/api/v1/post', postRoutes);
